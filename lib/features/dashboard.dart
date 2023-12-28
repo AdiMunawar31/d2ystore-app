@@ -1,4 +1,5 @@
 import 'package:d2ystore/common/pallete.dart';
+import 'package:d2ystore/features/app/app_list.dart';
 import 'package:d2ystore/features/games/game_list.dart';
 import 'package:d2ystore/features/splash.dart';
 import 'package:d2ystore/models/dashboard_items.dart';
@@ -12,13 +13,13 @@ class Dashboard extends StatelessWidget {
   final DashboardItems item1 = DashboardItems(
       img: "assets/images/app.png",
       title: "Application",
-      event: "3 Events",
-      routeName: Splash.routeName);
+      event: "4 Apps",
+      routeName: AppList.routeName);
 
   final DashboardItems item2 = DashboardItems(
       img: "assets/images/games.png",
       title: "Games",
-      event: "4 Items",
+      event: "4 Games",
       routeName: GameList.routeName);
 
   Dashboard({Key? key}) : super(key: key);

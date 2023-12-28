@@ -1,3 +1,5 @@
+import 'package:d2ystore/features/app/app_list.dart';
+import 'package:d2ystore/features/app/calculator/calculator.dart';
 import 'package:d2ystore/features/dashboard.dart';
 import 'package:d2ystore/features/games/flappy/flappy.dart';
 import 'package:d2ystore/features/games/game_list.dart';
@@ -22,6 +24,16 @@ class RouteGenerator {
         return MaterialPageRoute(
             settings: const RouteSettings(name: Dashboard.routeName),
             builder: (_) => Dashboard());
+
+      // Apps
+      case AppList.routeName:
+        return MaterialPageRoute(
+            settings: const RouteSettings(name: AppList.routeName),
+            builder: (_) => const AppList());
+      case Calculator.routeName:
+        return MaterialPageRoute(
+            settings: const RouteSettings(name: Calculator.routeName),
+            builder: (_) => const Calculator());
 
       // Games
       case GameList.routeName:

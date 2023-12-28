@@ -1,14 +1,16 @@
 import 'package:d2ystore/common/pallete.dart';
+import 'package:d2ystore/data/apps_data.dart';
 import 'package:d2ystore/data/games_data.dart';
 import 'package:d2ystore/features/dashboard.dart';
+import 'package:d2ystore/models/app_item.dart';
 import 'package:d2ystore/models/game_item.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class GameList extends StatelessWidget {
-  static const routeName = '/game-List';
-  const GameList({Key? key}) : super(key: key);
+class AppList extends StatelessWidget {
+  static const routeName = '/app-list';
+  const AppList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class GameList extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              buildGameList(context),
+              buildAppList(context),
             ],
           ),
         ),
@@ -56,7 +58,7 @@ class GameList extends StatelessWidget {
                   style: const TextStyle(
                       color: Colors.white), // Menentukan warna teks
                   decoration: InputDecoration(
-                    hintText: 'Search Games ...',
+                    hintText: 'Search Apps ...',
                     hintStyle: TextStyle(
                         color: Colors.white.withOpacity(0.7)), // Warna hint
                     border: InputBorder.none,
@@ -81,7 +83,7 @@ class GameList extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banners/game_b1.jpg'),
+                image: AssetImage('assets/images/banners/app_b1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -90,7 +92,7 @@ class GameList extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banners/game_b3.jpg'),
+                image: AssetImage('assets/images/banners/app_b2.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -99,14 +101,14 @@ class GameList extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banners/game_b4.jpg'),
+                image: AssetImage('assets/images/banners/app_b3.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
         ],
         options: CarouselOptions(
-          height: 170.0,
+          height: 190.0,
           autoPlay: true,
           enlargeCenterPage: true,
           aspectRatio: 16 / 9,
@@ -119,7 +121,7 @@ class GameList extends StatelessWidget {
     );
   }
 
-  Widget buildGameList(BuildContext context) {
+  Widget buildAppList(BuildContext context) {
     return Expanded(
       child: GridView.builder(
         shrinkWrap: true,
@@ -130,20 +132,20 @@ class GameList extends StatelessWidget {
           mainAxisSpacing: 16.0,
           childAspectRatio: 3 / 4,
         ),
-        itemCount: games.length,
+        itemCount: apps.length,
         itemBuilder: (context, index) {
-          return buildGameListItem(context, games[index]);
+          return buildAppListItem(context, apps[index]);
         },
       ),
     );
   }
 
-  Widget buildGameListItem(BuildContext context, GameItem game) {
+  Widget buildAppListItem(BuildContext context, AppItem app) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, game.routeName);
+          Navigator.pushNamed(context, app.routeName);
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,7 +156,7 @@ class GameList extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.0),
                   image: DecorationImage(
-                    image: AssetImage(game.image),
+                    image: AssetImage(app.image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -162,7 +164,7 @@ class GameList extends StatelessWidget {
             ),
             const SizedBox(height: 6.0),
             Text(
-              game.name,
+              app.name,
               style: const TextStyle(
                 fontSize: 14.0,
                 fontWeight: FontWeight.w600,
@@ -172,7 +174,7 @@ class GameList extends StatelessWidget {
             ),
             const SizedBox(height: 4.0),
             RatingBar.builder(
-              initialRating: game.rating,
+              initialRating: app.rating,
               minRating: 1,
               direction: Axis.horizontal,
               allowHalfRating: true,
