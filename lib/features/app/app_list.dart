@@ -83,7 +83,7 @@ class AppList extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banners/app_b1.jpg'),
+                image: AssetImage('assets/images/banners/app_b2.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -92,7 +92,7 @@ class AppList extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banners/app_b2.jpg'),
+                image: AssetImage('assets/images/banners/app_b1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

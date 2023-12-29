@@ -38,11 +38,12 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   flame: ^1.2.0
   # flame_audio: ^1.0.2
-  http: ^0.12.2
-  path_provider: ^1.6.18
-  screenshot: ^0.2.0
-  share: ^0.6.5+2
-  toast: ^0.1.5
+  # clipboard_manager: ^0.0.4
+  http: ^0.13.4
+  path_provider: ^2.0.2
+  screenshot: ^1.2.3
+  share: ^2.0.4
+  toast: ^0.3.0
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:d2ystore/features/app/calculator/calculator.dart';
+import 'package:d2ystore/features/app/quotes/quotes.dart';
 import 'package:d2ystore/features/games/flappy/flappy.dart';
 import 'package:d2ystore/features/games/snake/snake.dart';
 import 'package:d2ystore/models/app_item.dart';
@@ -14,7 +15,7 @@ List<AppItem> apps = [
     name: 'Quotes',
     rating: 2.5,
     image: 'assets/images/apps/quotes.jpg',
-    routeName: Snake.routeName,
+    routeName: Quotes.routeName,
   ),
   AppItem(
     name: 'Calculator',

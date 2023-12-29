@@ -177,6 +177,7 @@ class _CalculatorState extends State<Calculator> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('Calculator'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
